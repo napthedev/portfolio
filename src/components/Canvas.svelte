@@ -56,6 +56,7 @@
     let particles = [];
 
     const setup = () => {
+      if (innerWidth < 768) return;
       const SIZE = 50;
       particles = images.map(
         (image) =>
@@ -74,8 +75,6 @@
       canvas.height = innerHeight;
     };
 
-    setup();
-
     const animate = () => {
       requestAnimationFrame(animate);
 
@@ -86,11 +85,10 @@
       });
     };
 
+    setup();
     animate();
 
-    window.addEventListener("resize", () => {
-      setup();
-    });
+    window.addEventListener("resize", setup);
   });
 </script>
 
@@ -101,8 +99,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    canvas {
+      display: none;
+    }
   }
 </style>

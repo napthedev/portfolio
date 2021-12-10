@@ -10,12 +10,7 @@
   });
 </script>
 
-<svg
-  viewBox="0 0 712 145"
-  {...$$props}
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
+<svg viewBox="0 0 276 97" fill="none" xmlns="http://www.w3.org/2000/svg">
   {#if visible}
     {#each characters as character, index}
       <path
@@ -29,3 +24,11 @@
     {/each}
   {/if}
 </svg>
+
+<style>
+  svg {
+    height: 100px;
+    max-width: 100vw;
+    z-index: 10;
+  }
+</style>

@@ -16,7 +16,7 @@
   {#if visible}
     <Canvas />
   {/if}
-  <Typing style="height: 100px; max-width: 100vw; z-index: 10;" />
+  <Typing />
   {#if visible}
     <p in:fade={{ delay: 1600 }}>I'm a frontend developer</p>
   {/if}
@@ -24,18 +24,19 @@
 
 <style>
   .container {
-    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative;
+    gap: 20px;
   }
 
   p {
     font-size: 30px;
     text-align: center;
     z-index: 10;
+    margin: 0;
   }
 </style>
