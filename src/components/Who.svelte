@@ -27,10 +27,13 @@
       </div>
     </div>
 
-    <p>My name is Nguyen Anh Phong</p>
-    <p>I'm {new Date().getFullYear() - 2007} years old</p>
-    <p>I am living in Hanoi, Vietnam</p>
-    <p>I enjoy web development</p>
+    <p>
+      My name is Nguyen Anh Phong. I'm {new Date().getFullYear() - 2007} years old.
+      I am living in Hanoi, Vietnam. I have started learning web development since
+      I was 13 and I really enjoy it. I have made a lot of projects since then, from
+      a basic html page to a complex website like google minified or react library.
+      I hope I could be a great developer and get a good job in the future.
+    </p>
   </div>
 </main>
 
