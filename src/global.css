@@ -21,7 +21,8 @@ body {
   top: 105%;
   left: 50%;
   transform: translate(-50%);
-  animation: expand 0.4s ease-in-out 0.3s;
+  width: 0;
+  animation: expand 0.4s ease-in-out 0.3s forwards;
 }
 
 @keyframes expand {
