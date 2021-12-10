@@ -3,6 +3,8 @@
   import { canvasImages } from "../shared/constant";
   import { fade } from "svelte/transition";
 
+  export let setExtraTextVisible;
+
   let canvas;
 
   onMount(() => {
@@ -14,6 +16,16 @@
 
     let ctx = canvas.getContext("2d");
 
+    const mouse = {
+      x: innerWidth / 2,
+      y: innerHeight / 2,
+    };
+
+    canvas.addEventListener("mousemove", (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY + Math.abs(canvas.getBoundingClientRect().top);
+    });
+
     class Particle {
       constructor(x, y, dx, dy, angle, size, image) {
         this.x = x;
@@ -23,6 +35,9 @@
         this.angle = angle;
         this.size = size;
         this.image = image;
+        this.mouseTouched = false;
+        this.opacity = 1;
+        this.scale = 1;
       }
 
       update() {
@@ -31,10 +46,15 @@
         if (this.y < this.size / 2) this.dy = -this.dy;
         if (this.y > innerHeight - this.size / 2) this.dy = -this.dy;
 
-        this.x += this.dx;
-        this.y += this.dy;
-        this.angle += 1;
-
+        if (this.mouseTouched) {
+          this.angle += 10;
+          this.opacity -= 0.01;
+          this.scale -= 0.01;
+        } else {
+          this.x += this.dx;
+          this.y += this.dy;
+          this.angle += 1;
+        }
         this.draw();
       }
 
@@ -42,22 +62,23 @@
         ctx.save();
         ctx.translate(this.x, this.y);
         ctx.rotate(this.angle * (Math.PI / 180));
+        ctx.globalAlpha = this.opacity > 0 ? this.opacity : 0;
         ctx.drawImage(
           this.image,
-          -this.size / 2,
-          -this.size / 2,
-          this.size,
-          this.size
+          (-this.size / 2) * this.scale,
+          (-this.size / 2) * this.scale,
+          this.size * this.scale,
+          this.size * this.scale
         );
         ctx.restore();
       }
     }
 
     let particles = [];
+    const SIZE = 50;
 
     const setup = () => {
       if (innerWidth < 768) return;
-      const SIZE = 50;
       particles = images.map(
         (image) =>
           new Particle(
@@ -73,6 +94,7 @@
 
       canvas.width = innerWidth;
       canvas.height = innerHeight;
+      setExtraTextVisible(false);
     };
 
     const animate = () => {
@@ -80,9 +102,28 @@
 
       ctx.clearRect(0, 0, innerWidth, innerHeight);
 
+      if (
+        particles.length > 0 &&
+        particles.every((particle) => particle.opacity < 0)
+      ) {
+        setExtraTextVisible(true);
+      }
+      particles = particles.filter((particle) => particle.opacity > 0);
+
+      let isCursorPointer = false;
       particles.forEach((particle) => {
         particle.update();
+
+        if (
+          Math.abs(mouse.x - particle.x) < SIZE / 2 &&
+          Math.abs(mouse.y - particle.y) < SIZE / 2
+        ) {
+          particle.mouseTouched = true;
+          isCursorPointer = true;
+        }
       });
+
+      canvas.style.cursor = isCursorPointer ? "pointer" : "default";
     };
 
     setup();

@@ -57,29 +57,4 @@
     font-size: 18px;
     color: #c5c5c5;
   }
-
-  .underline {
-    position: relative;
-  }
-
-  .underline::after {
-    content: "";
-    width: 100%;
-    height: 4px;
-    background: dodgerblue;
-    position: absolute;
-    top: 105%;
-    left: 50%;
-    transform: translate(-50%);
-    animation: expand 0.4s ease-in-out 0.3s;
-  }
-
-  @keyframes expand {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
 </style>
