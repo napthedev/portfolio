@@ -1,0 +1,31 @@
+<script>
+  import { draw, fade } from "svelte/transition";
+  import { characters } from "../shared/constant";
+  import { onMount } from "svelte";
+
+  let visible = false;
+
+  onMount(() => {
+    visible = true;
+  });
+</script>
+
+<svg
+  viewBox="0 0 712 145"
+  {...$$props}
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  {#if visible}
+    {#each characters as character, index}
+      <path
+        in:draw={{ duration: 1000, delay: index * 100 }}
+        d={character}
+        fill="none"
+        stroke="#FFF"
+        stroke-width="3"
+      />
+      <path in:fade={{ delay: 1000 + index * 100 }} d={character} fill="#FFF" />
+    {/each}
+  {/if}
+</svg>
