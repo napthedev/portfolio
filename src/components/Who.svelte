@@ -38,7 +38,7 @@
   main {
     display: flex;
     gap: 5vw;
-    background: #2c2c2c;
+    background: #252525;
     padding: 50px 15vw;
   }
 

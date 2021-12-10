@@ -3,6 +3,6 @@
 <style>
   main {
     height: 100vh;
-    background: #000;
+    background: #1f1f1f;
   }
 </style>

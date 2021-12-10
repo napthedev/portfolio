@@ -24,7 +24,7 @@
     <p in:fade={{ delay: 1600 }}>I'm a frontend developer</p>
   {/if}
   {#if extraTextVisible}
-    <p class="underline" in:slide>With a lot of knowledge</p>
+    <p in:slide>With a lot of knowledge collected</p>
   {/if}
 </div>
 

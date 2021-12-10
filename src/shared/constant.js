@@ -7,23 +7,26 @@ export const characters = [
 ];
 
 export const canvasImages = [
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/html.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/javascript.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/css.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/react.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/typescript.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/vue.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/svelte.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/nodejs.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/tailwindcss.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/sass.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/next.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/firebase.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/vscode.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/git.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/vite.svg",
-  "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/webpack.svg",
-];
+  "html",
+  "javascript",
+  "css",
+  "react",
+  "typescript",
+  "vue",
+  "svelte",
+  "nodejs",
+  "tailwindcss",
+  "sass",
+  "next",
+  "firebase",
+  "vscode",
+  "git",
+  "vite",
+  "webpack",
+].map(
+  (item) =>
+    `https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/${item}.svg`
+);
 
 export const roles = [
   "Developer",
