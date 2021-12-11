@@ -33,9 +33,71 @@ export const roles = [
   "Student",
   "Designer",
   "Google Searcher",
-  "Stack Overflow Searcher",
   "Software Engineer",
   "Coding Lover",
   "Gamer",
   "Freelancer",
+];
+
+export const skills = [
+  {
+    name: "HTML",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/html.svg",
+    link: "https://www.w3schools.com/html/default.asp",
+  },
+  {
+    name: "CSS",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/css.svg",
+    link: "https://www.w3schools.com/css/default.asp",
+  },
+  {
+    name: "Javascript",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/javascript.svg",
+    link: "https://www.w3schools.com/js/default.asp",
+  },
+  {
+    name: "Typescript",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/typescript.svg",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "Node JS",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/nodejs.svg",
+    link: "https://nodejs.org/",
+  },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/react.svg",
+    link: "https://reactjs.org/",
+  },
+  {
+    name: "Next JS",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/next.svg",
+    link: "https://nextjs.org/",
+  },
+  {
+    name: "Vue",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/vue.svg",
+    link: "https://v3.vuejs.org/",
+  },
+  {
+    name: "Svelte",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/svelte.svg",
+    link: "https://svelte.dev/",
+  },
+  {
+    name: "Sass",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/sass.svg",
+    link: "https://sass-lang.com/",
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/tailwindcss.svg",
+    link: "https://tailwindcss.com/",
+  },
+  {
+    name: "Firebase",
+    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/firebase.svg",
+    link: "https://firebase.google.com/",
+  },
 ];

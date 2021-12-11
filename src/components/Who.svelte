@@ -42,7 +42,7 @@
     display: flex;
     gap: 5vw;
     background: #252525;
-    padding: 50px 15vw;
+    padding: 100px 15vw;
   }
 
   img {
@@ -59,5 +59,18 @@
     margin: 0;
     font-size: 18px;
     color: #c5c5c5;
+  }
+
+  @media (max-width: 992px) {
+    main {
+      padding: 100px 5vw;
+    }
+  }
+
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 </style>
