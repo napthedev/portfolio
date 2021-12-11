@@ -27,7 +27,9 @@
 
 <style>
   svg {
-    height: 100px;
+    height: 10vw;
+    max-height: 100px;
+    min-height: 60px;
     max-width: 100vw;
     z-index: 10;
   }

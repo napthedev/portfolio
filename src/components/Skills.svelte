@@ -60,6 +60,12 @@
 
   @media (max-width: 576px) {
     .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 350px) {
+    .container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
