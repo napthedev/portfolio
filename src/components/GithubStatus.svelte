@@ -21,6 +21,7 @@
   div {
     display: flex;
     gap: 20px;
+    justify-content: center;
   }
 
   img {
