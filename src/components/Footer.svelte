@@ -1,8 +1,12 @@
 <main>
-  <p>Copyright &copy; 2021. Designed and coded by me</p>
+  <p>
+    Copyright &copy; 2021. <span class="hide-on-mobile"
+      >Designed and coded by me</span
+    >
+  </p>
 
   <div>
-    <p>Contact me:</p>
+    <p class="hide-on-mobile">Contact me:</p>
     <a href="https://github.com/napthedev" target="_blank">
       <i class="bx bxl-github" />
     </a>
@@ -52,5 +56,11 @@
 
   .bxl-discord-alt:hover {
     color: #5965f2;
+  }
+
+  @media (max-width: 768px) {
+    .hide-on-mobile {
+      display: none;
+    }
   }
 </style>
