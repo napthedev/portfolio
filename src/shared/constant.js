@@ -1,3 +1,6 @@
+export const techIcon = (icon) =>
+  `https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/${icon}.svg`;
+
 export const characters = [
   "M43.875 24.4375C43.875 31.375 41.5 36.7188 36.75 40.4688C32.0312 44.1875 25.2656 46.0469 16.4531 46.0469H8.39062V73H0.421875V4.46875H18.1875C35.3125 4.46875 43.875 11.125 43.875 24.4375ZM8.39062 39.2031H15.5625C22.625 39.2031 27.7344 38.0625 30.8906 35.7812C34.0469 33.5 35.625 29.8438 35.625 24.8125C35.625 20.2812 34.1406 16.9062 31.1719 14.6875C28.2031 12.4688 23.5781 11.3594 17.2969 11.3594H8.39062V39.2031Z",
   "M92.25 73V39.7656C92.25 35.5781 91.2969 32.4531 89.3906 30.3906C87.4844 28.3281 84.5 27.2969 80.4375 27.2969C75.0312 27.2969 71.0781 28.7656 68.5781 31.7031C66.1094 34.6406 64.875 39.4531 64.875 46.1406V73H57.0938V0.0625H64.875V22.1406C64.875 24.7969 64.75 27 64.5 28.75H64.9688C66.5 26.2812 68.6719 24.3438 71.4844 22.9375C74.3281 21.5 77.5625 20.7812 81.1875 20.7812C87.4688 20.7812 92.1719 22.2812 95.2969 25.2812C98.4531 28.25 100.031 32.9844 100.031 39.4844V73H92.25Z",
@@ -23,10 +26,7 @@ export const canvasImages = [
   "git",
   "vite",
   "webpack",
-].map(
-  (item) =>
-    `https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/${item}.svg`
-);
+].map(techIcon);
 
 export const roles = [
   "Developer",
@@ -42,62 +42,101 @@ export const roles = [
 export const skills = [
   {
     name: "HTML",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/html.svg",
+    icon: techIcon("html"),
     link: "https://www.w3schools.com/html/default.asp",
   },
   {
     name: "CSS",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/css.svg",
+    icon: techIcon("css"),
     link: "https://www.w3schools.com/css/default.asp",
   },
   {
     name: "Javascript",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/javascript.svg",
+    icon: techIcon("javascript"),
     link: "https://www.w3schools.com/js/default.asp",
   },
   {
     name: "Typescript",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/typescript.svg",
+    icon: techIcon("typescript"),
     link: "https://www.typescriptlang.org/",
   },
   {
     name: "Node JS",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/nodejs.svg",
+    icon: techIcon("nodejs"),
     link: "https://nodejs.org/",
   },
   {
     name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/react.svg",
+    icon: techIcon("react"),
     link: "https://reactjs.org/",
   },
   {
     name: "Next JS",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/next.svg",
+    icon: techIcon("next"),
     link: "https://nextjs.org/",
   },
   {
     name: "Vue",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/vue.svg",
+    icon: techIcon("vue"),
     link: "https://v3.vuejs.org/",
   },
   {
     name: "Svelte",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/svelte.svg",
+    icon: techIcon("svelte"),
     link: "https://svelte.dev/",
   },
   {
     name: "Sass",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/sass.svg",
+    icon: techIcon("sass"),
     link: "https://sass-lang.com/",
   },
   {
     name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/tailwindcss.svg",
+    icon: techIcon("tailwindcss"),
     link: "https://tailwindcss.com/",
   },
   {
     name: "Firebase",
-    icon: "https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@main/icons/firebase.svg",
+    icon: techIcon("firebase"),
     link: "https://firebase.google.com/",
+  },
+];
+
+export const projects = [
+  {
+    name: "eCinema",
+    description:
+      "This is a beautiful movie website built with nextjs. It has a wonderful UI, great user experience and real movies. You can watch every popular movies in this place. The data resources are TMDB and 2embed.ru",
+    image: "https://ik.imagekit.io/nap/portfolio/ecinema_pOtsbPW-G.png",
+    techs: ["next", "typescript", "tailwindcss"].map(techIcon),
+    link: "http://e-cinema.vercel.app",
+    git: "https://github.com/napthedev/eCinema.git",
+  },
+  {
+    name: "React CssFx Loading",
+    description:
+      "React Wrapper for the CssFx loading collections. It allows you to change colors, width, height, duration of the animation. And the most important, it supports typescript, for all typescript lovers out there.",
+    image: "https://ik.imagekit.io/nap/portfolio/cssfx_EYdoGTXp-6y5.png",
+    techs: ["react", "typescript"].map(techIcon),
+    link: "https://www.npmjs.com/package/react-cssfx-loading",
+    git: "https://github.com/napthedev/react-cssfx-loading.git",
+  },
+  {
+    name: "MacOS Big Sur on the Web",
+    description:
+      "I have recreated the MacOS Big Sur user interface on the web using Vue and Typescript. The UI is almost identical, with light/dark mode changing, wallpapers of other macos, animated dock. You should check it out!",
+    image: "https://ik.imagekit.io/nap/portfolio/mac__0QV2Tj0BnK.png",
+    techs: ["vue", "sass", "typescript"].map(techIcon),
+    link: "https://mac-bigsur.vercel.app",
+    git: "https://github.com/napthedev/mac-big-sur.git",
+  },
+  {
+    name: "Atom Background Modified",
+    description:
+      "I love the syntax highlighting of the Atom One Dark theme, but the contrast of the background seems to be too light for me, so I have modified the background and publish this theme. I have used it for a long time and I love it!",
+    image: "https://ik.imagekit.io/nap/portfolio/atom_IWGOoa3jf.png",
+    techs: [],
+    link: "https://marketplace.visualstudio.com/items?itemName=NAPTheDevHcj.atom-background-modified",
+    git: "https://github.com/napthedev/atom-background-modified.git",
   },
 ];

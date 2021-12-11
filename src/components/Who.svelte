@@ -14,7 +14,7 @@
 </script>
 
 <main>
-  <img src="https://i.imgur.com/rtFn0j4.jpg" alt="" />
+  <img src="https://ik.imagekit.io/nap/avatar_vjsgYooIu.jpg" alt="" />
   <div>
     <h1 style="font-size: 40px;">Who I'm I?</h1>
 

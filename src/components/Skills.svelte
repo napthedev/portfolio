@@ -9,10 +9,10 @@
   </p>
   <div class="container">
     {#each skills as skill}
-      <div class="item">
+      <a href={skill.link} target="_blank" class="item">
         <img src={skill.icon} alt="" />
         <p>{skill.name}</p>
-      </div>
+      </a>
     {/each}
   </div>
 </main>
@@ -40,6 +40,16 @@
   img {
     width: 60px;
     height: 60px;
+    transition: 0.3s;
+  }
+
+  a:hover img {
+    transform: scale(110%);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   @media (max-width: 992px) {
