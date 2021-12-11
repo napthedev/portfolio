@@ -17,13 +17,18 @@
     let ctx = canvas.getContext("2d");
 
     const mouse = {
-      x: innerWidth / 2,
-      y: innerHeight / 2,
+      x: -1000,
+      y: -1000,
     };
 
     canvas.addEventListener("mousemove", (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY + Math.abs(canvas.getBoundingClientRect().top);
+    });
+
+    canvas.addEventListener("mouseleave", () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
     });
 
     class Particle {
@@ -150,10 +155,4 @@
     height: 100vh;
     opacity: 0.7;
   }
-
-  /* @media (max-width: 768px) {
-    canvas {
-      display: none;
-    }
-  } */
 </style>
