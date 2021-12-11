@@ -111,7 +111,7 @@
   }
 
   @media (max-width: 768px) {
-    main {
+    .container {
       align-items: center;
       gap: 100px;
     }

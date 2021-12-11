@@ -4,6 +4,7 @@
   import Skills from "./components/Skills.svelte";
   import Projects from "./components/Projects.svelte";
   import GithubStatus from "./components/GithubStatus.svelte";
+  import Footer from "./components/Footer.svelte";
 </script>
 
 <main>
@@ -12,6 +13,7 @@
   <Skills />
   <Projects />
   <GithubStatus />
+  <Footer />
 </main>
 
 <style>
