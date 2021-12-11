@@ -3,40 +3,48 @@
 </script>
 
 <main>
-  {#each projects as project, index}
-    <div
-      class="item"
-      style={`flex-direction: ${index % 2 ? "row" : "row-reverse"}`}
-    >
-      <div>
-        <img style="width: 100%; height: auto;" src={project.image} alt="" />
-      </div>
-      <div>
-        <h1>{project.name}</h1>
-        <p>{project.description}</p>
-        <div style="display: flex; gap: 5px;">
-          {#each project.techs as tech}
-            <img style="width: 30px; height: 30px;" src={tech} alt="" />
-          {/each}
+  <h1 style="margin-bottom: 60px; text-align: center;">
+    Checkout some of my projects
+  </h1>
+  <div class="container">
+    {#each projects as project, index}
+      <div
+        class="item"
+        style={`flex-direction: ${index % 2 ? "row" : "row-reverse"}`}
+      >
+        <div>
+          <img style="width: 100%; height: auto;" src={project.image} alt="" />
         </div>
+        <div>
+          <h1>{project.name}</h1>
+          <p>{project.description}</p>
+          <div style="display: flex; gap: 5px;">
+            {#each project.techs as tech}
+              <img style="width: 30px; height: 30px;" src={tech} alt="" />
+            {/each}
+          </div>
 
-        <div style="display: flex; margin-top: 25px; gap: 20px;">
-          <a href={project.link} target="_blank" class="link">
-            <i class="bx bx-link-external" /> <span> Live Demo</span></a
-          >
-          <a href={project.git} target="_blank" class="git"
-            ><i class="bx bxl-github" /> View Github
-          </a>
+          <div style="display: flex; margin-top: 25px; gap: 20px;">
+            <a href={project.link} target="_blank" class="link">
+              <i class="bx bx-link-external" /> <span> Live Demo</span></a
+            >
+            <a href={project.git} target="_blank" class="git"
+              ><i class="bx bxl-github" /> View Github
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  {/each}
+    {/each}
+  </div>
 </main>
 
 <style>
   main {
     padding: 100px 10vw;
     background: #2a2a2a;
+  }
+
+  .container {
     display: flex;
     flex-direction: column;
     align-items: stretch;

@@ -75,10 +75,16 @@
     }
 
     let particles = [];
-    const SIZE = 50;
+
+    let expectedSize = Math.round(innerWidth / 20);
+    let SIZE = expectedSize < 30 ? 30 : expectedSize > 50 ? 50 : expectedSize;
 
     const setup = () => {
-      if (innerWidth < 768) return;
+      let expectedSize = Math.round(innerWidth / 20);
+      SIZE = expectedSize < 30 ? 30 : expectedSize > 50 ? 50 : expectedSize;
+
+      console.log(SIZE);
+
       particles = images.map(
         (image) =>
           new Particle(
@@ -145,9 +151,9 @@
     opacity: 0.7;
   }
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     canvas {
       display: none;
     }
-  }
+  } */
 </style>

@@ -1,5 +1,5 @@
 <main>
-  <h1>My Github Status</h1>
+  <h1 style="text-align: center; margin-bottom: 60px;">My Github Status</h1>
   <div>
     <img
       src="https://github-readme-stats.vercel.app/api/top-langs/?username=napthedev&layout=compact&theme=tokyonight&langs_count=6"
