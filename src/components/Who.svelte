@@ -73,4 +73,30 @@
       align-items: center;
     }
   }
+
+  .underline {
+    position: relative;
+  }
+
+  .underline::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: #1e90ff;
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 0;
+    animation: expand 0.4s ease-in-out 0.3s forwards;
+  }
+
+  @keyframes expand {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
 </style>
