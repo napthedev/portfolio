@@ -15,7 +15,7 @@
   });
 </script>
 
-<div class="container">
+<main class="section">
   {#if visible}
     <Canvas {setExtraTextVisible} />
   {/if}
@@ -36,16 +36,15 @@
       <i in:fade={{ delay: 1600 }} class="bx bxs-chevrons-down" />
     </div>
   {/if}
-</div>
+</main>
 
 <style>
-  .container {
+  main {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
     gap: 20px;
   }
 

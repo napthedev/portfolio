@@ -42,6 +42,7 @@
   main {
     padding: 100px 10vw;
     background: #2a2a2a;
+    z-index: 10;
   }
 
   .container {
