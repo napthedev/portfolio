@@ -2,7 +2,7 @@
   import { skills } from "../shared/constant";
 </script>
 
-<main class="section">
+<main>
   <h1 style="text-align: center;">My skills & Knowledge</h1>
   <p style="font-size: 18px; margin-bottom: 60px; text-align: center;">
     Technologies and languages that I use to make my product everyday

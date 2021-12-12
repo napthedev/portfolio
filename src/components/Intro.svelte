@@ -15,7 +15,7 @@
   });
 </script>
 
-<main class="section">
+<main>
   {#if visible}
     <Canvas {setExtraTextVisible} />
   {/if}

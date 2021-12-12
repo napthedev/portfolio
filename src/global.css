@@ -7,10 +7,3 @@ body {
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
-
-.section {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-}

@@ -28,7 +28,6 @@
     height: 70px;
     padding: 0 30px;
     font-size: 18px;
-    z-index: 10;
   }
 
   div {

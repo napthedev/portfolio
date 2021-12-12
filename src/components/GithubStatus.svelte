@@ -16,7 +16,6 @@
   main {
     background: #1f1f1f;
     padding: 50px 10vw;
-    z-index: 10;
   }
 
   div {
