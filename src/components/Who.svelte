@@ -23,6 +23,7 @@
         end: "bottom",
         pin: true,
         scrub: 0.5,
+        pinSpacing: true,
       },
     });
 

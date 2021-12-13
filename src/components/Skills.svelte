@@ -16,18 +16,9 @@
         end: "bottom",
         pin: true,
         scrub: 0.5,
+        pinSpacing: true,
       },
     });
-
-    tl.fromTo(
-      "#skills-title",
-      {
-        fontSize: innerWidth > 768 ? 50 : 30,
-      },
-      {
-        fontSize: innerWidth > 768 ? 30 : 20,
-      }
-    );
 
     tl.fromTo(
       "#skills #skills-description",
@@ -58,8 +49,8 @@
 </script>
 
 <main id="skills">
-  <h1 id="skills-title" style="text-align: center;">My skills & Knowledge</h1>
-  <p id="skills-description" style="font-size: 18px; text-align: center;">
+  <h1 class="title">My skills & Knowledge</h1>
+  <p id="skills-description">
     Technologies and languages that I use to make my product everyday
   </p>
   <div class="container">
@@ -76,7 +67,6 @@
   main {
     padding: 0 10vw;
     height: 100vh;
-    margin-top: 100vh;
     background: #1f1f1f;
     display: flex;
     flex-direction: column;
@@ -90,6 +80,12 @@
     justify-content: center;
     grid-template-columns: repeat(6, 1fr);
     gap: 20px 0;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
   }
 
   .item {
@@ -118,18 +114,23 @@
     color: inherit;
   }
 
+  #skills-description {
+    font-size: 18px;
+    text-align: center;
+    margin: 30px 0;
+  }
+
   @media (max-width: 992px) {
     .container {
       grid-template-columns: repeat(4, 1fr);
     }
+
+    .title {
+      font-size: 25px;
+    }
   }
 
   @media (max-width: 768px) {
-    img {
-      width: 40px;
-      height: 40px;
-    }
-
     .container {
       gap: 10px 0;
     }

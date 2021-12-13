@@ -30,13 +30,18 @@
         },
         { opacity: 1, y: 0, duration: 1 }
       );
-      tl.fromTo(info, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 });
+      tl.fromTo(
+        info,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1 },
+        "-=1"
+      );
     });
   });
 </script>
 
 <main id="projects">
-  <h1 style="margin-bottom: 60px; text-align: center;">
+  <h1 class="title" style="margin-bottom: 60px; text-align: center;">
     Checkout some of my projects
   </h1>
   <div class="container">
@@ -77,9 +82,14 @@
 
 <style>
   main {
-    margin-top: 100vh;
     padding: 100px 10vw;
     background: #2a2a2a;
+  }
+
+  .title {
+    margin-bottom: 60px;
+    text-align: center;
+    font-size: 40px;
   }
 
   .container {
@@ -145,6 +155,10 @@
   @media (max-width: 992px) {
     main {
       padding: 100px 5vw;
+    }
+
+    .title {
+      font-size: 25px;
     }
   }
 
