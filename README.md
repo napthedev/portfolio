@@ -11,5 +11,6 @@
 
 ## Dependencies
 
-- Svelte (only this)
+- Svelte
 - Vite (build tool)
+- Gsap Scroll Trigger
