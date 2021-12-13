@@ -22,13 +22,15 @@
       const img = item.querySelector("img");
       const info = item.querySelector(".item-info");
 
-      tl.fromTo(img, { rotateX: -90 }, { rotateX: 0, duration: 1 });
       tl.fromTo(
-        info,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1 },
-        "-=1"
+        img,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        { opacity: 1, y: 0, duration: 1 }
       );
+      tl.fromTo(info, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 });
     });
   });
 </script>
