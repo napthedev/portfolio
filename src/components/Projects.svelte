@@ -1,8 +1,39 @@
 <script>
   import { projects } from "../shared/constant";
+
+  import { onMount } from "svelte";
+
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  onMount(() => {
+    document.querySelectorAll("#projects .item").forEach((item) => {
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: item,
+          start: "-=500px",
+          end: "-=150px",
+          scrub: 0.5,
+        },
+      });
+
+      const img = item.querySelector("img");
+      const info = item.querySelector(".item-info");
+
+      tl.fromTo(img, { rotateX: -90 }, { rotateX: 0, duration: 1 });
+      tl.fromTo(
+        info,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1 },
+        "-=1"
+      );
+    });
+  });
 </script>
 
-<main>
+<main id="projects">
   <h1 style="margin-bottom: 60px; text-align: center;">
     Checkout some of my projects
   </h1>
@@ -13,9 +44,13 @@
         style={`flex-direction: ${index % 2 ? "row" : "row-reverse"}`}
       >
         <div>
-          <img style="width: 100%; height: auto;" src={project.image} alt="" />
+          <img
+            style="width: 100%; height: auto; transform-origin: bottom left;"
+            src={project.image}
+            alt=""
+          />
         </div>
-        <div>
+        <div class="item-info">
           <h1>{project.name}</h1>
           <p>{project.description}</p>
           <div style="display: flex; gap: 5px;">
@@ -40,6 +75,7 @@
 
 <style>
   main {
+    margin-top: 100vh;
     padding: 100px 10vw;
     background: #2a2a2a;
   }

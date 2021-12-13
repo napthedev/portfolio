@@ -3,6 +3,11 @@
   import { onMount } from "svelte";
   import { slide } from "svelte/transition";
 
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
   let roleCount = 0;
   let role = roles[roleCount];
 
@@ -10,15 +15,75 @@
     setInterval(() => {
       role = roles[++roleCount % roles.length];
     }, 2000);
+
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#who",
+        start: "top",
+        end: "bottom",
+        pin: true,
+        scrub: 0.5,
+      },
+    });
+
+    tl.fromTo(
+      "#who #who-title",
+      {
+        fontSize: 60,
+      },
+      {
+        fontSize: 30,
+      }
+    );
+
+    tl.fromTo(
+      "#who #avatar",
+      {
+        opacity: 0,
+        x: -20,
+      },
+      {
+        opacity: 1,
+        x: 0,
+      }
+    );
+
+    tl.fromTo(
+      "#who #role",
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 0,
+      }
+    );
+
+    tl.fromTo(
+      "#who #story",
+      {
+        opacity: 0,
+        y: 20,
+      },
+      {
+        opacity: 1,
+        y: 0,
+      }
+    );
   });
 </script>
 
-<main>
-  <img src="https://ik.imagekit.io/nap/avatar_vjsgYooIu.jpg" alt="" />
+<main id="who">
+  <img
+    id="avatar"
+    src="https://ik.imagekit.io/nap/avatar_vjsgYooIu.jpg"
+    alt=""
+  />
   <div>
-    <h1 style="font-size: 40px;">Who I'm I?</h1>
+    <h1 id="who-title" style="font-size: 40px;">Who I'm I?</h1>
 
-    <div style="display: flex; gap: 10px; margin: 30px 0;">
+    <div id="role" style="display: flex; gap: 10px; margin: 30px 0;">
       <h1 style="height: 35px;">A</h1>
       <div style="height: 35px;">
         {#key role}
@@ -27,7 +92,7 @@
       </div>
     </div>
 
-    <p>
+    <p id="story">
       My name is Nguyen Anh Phong. I'm {new Date().getFullYear() - 2007} years old.
       I am living in Hanoi, Vietnam. I have started learning web development since
       I was 13 and I really enjoy it. I have made a lot of projects since then, from
@@ -42,7 +107,11 @@
     display: flex;
     gap: 5vw;
     background: #252525;
-    padding: 100px 15vw;
+    padding: 0 15vw;
+    z-index: 2;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
   }
 
   img {
@@ -63,7 +132,7 @@
 
   @media (max-width: 992px) {
     main {
-      padding: 100px 5vw;
+      padding: 0 5vw;
     }
   }
 

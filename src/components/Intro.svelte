@@ -5,6 +5,9 @@
   import { fade, slide } from "svelte/transition";
   import { onMount } from "svelte";
 
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
   let visible = false;
 
   let extraTextVisible = false;
@@ -13,9 +16,33 @@
   onMount(() => {
     visible = true;
   });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  onMount(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#intro",
+        pin: true,
+        scrub: 0.5,
+        start: "top",
+        end: "bottom",
+      },
+    });
+
+    tl.fromTo(
+      "#intro",
+      {
+        opacity: 1,
+      },
+      {
+        opacity: 0,
+      }
+    );
+  });
 </script>
 
-<main>
+<main id="intro">
   {#if visible}
     <Canvas {setExtraTextVisible} />
   {/if}
@@ -46,12 +73,13 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    z-index: 0;
   }
 
   p {
     font-size: 30px;
     text-align: center;
-    z-index: 10;
+    z-index: 1;
     margin: 0;
   }
 

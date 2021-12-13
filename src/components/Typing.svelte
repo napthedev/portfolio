@@ -31,6 +31,6 @@
     max-height: 100px;
     min-height: 60px;
     max-width: 100vw;
-    z-index: 10;
+    z-index: 1;
   }
 </style>

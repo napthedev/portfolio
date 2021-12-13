@@ -1,10 +1,65 @@
 <script>
   import { skills } from "../shared/constant";
+
+  import { onMount } from "svelte";
+
+  import gsap from "gsap";
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  onMount(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#skills",
+        start: "top",
+        end: "bottom",
+        pin: true,
+        scrub: 0.5,
+      },
+    });
+
+    tl.fromTo(
+      "#skills-title",
+      {
+        fontSize: innerWidth > 768 ? 50 : 30,
+      },
+      {
+        fontSize: innerWidth > 768 ? 30 : 20,
+      }
+    );
+
+    tl.fromTo(
+      "#skills #skills-description",
+      {
+        y: 20,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+      }
+    );
+
+    document.querySelectorAll("#skills .item").forEach((item) => {
+      tl.fromTo(
+        item,
+        {
+          opacity: 0,
+          y: 20,
+        },
+        {
+          opacity: 1,
+          y: 0,
+        }
+      );
+    });
+  });
 </script>
 
-<main>
-  <h1 style="text-align: center;">My skills & Knowledge</h1>
-  <p style="font-size: 18px; margin-bottom: 60px; text-align: center;">
+<main id="skills">
+  <h1 id="skills-title" style="text-align: center;">My skills & Knowledge</h1>
+  <p id="skills-description" style="font-size: 18px; text-align: center;">
     Technologies and languages that I use to make my product everyday
   </p>
   <div class="container">
@@ -19,8 +74,15 @@
 
 <style>
   main {
-    padding: 100px 10vw;
+    padding: 0 10vw;
+    height: 100vh;
+    margin-top: 100vh;
     background: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
   }
 
   .container {
@@ -35,6 +97,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+  }
+
+  .item p {
+    text-align: center;
   }
 
   img {
@@ -58,15 +124,20 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: 768px) {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
     .container {
-      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 0;
     }
   }
 
-  @media (max-width: 350px) {
+  @media (max-width: 576px) {
     .container {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>
