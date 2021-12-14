@@ -9,10 +9,7 @@
   gsap.registerPlugin(ScrollTrigger);
 
   onMount(() => {
-    let sections = gsap.utils.toArray("#projects .item");
-
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
+    gsap.to("#projects .container", {
       scrollTrigger: {
         trigger: "#projects",
         pin: true,
@@ -20,8 +17,8 @@
         scrub: 0.5,
         start: "top",
         end: "bottom",
-        snap: 0.25,
       },
+      xPercent: -75,
     });
   });
 </script>
@@ -31,7 +28,7 @@
     Checkout some of my projects
   </h1>
   <div class="container">
-    {#each projects as project, index}
+    {#each projects as project}
       <div class="item">
         <div>
           <img
@@ -69,12 +66,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
   }
 
   .title {
-    margin-bottom: 60px;
+    margin: 60px 0;
     text-align: center;
     font-size: 40px;
   }
@@ -141,24 +138,19 @@
   }
 
   @media (max-width: 992px) {
-    main {
-      padding: 100px 0;
+    .item {
+      padding: 0 5vw;
     }
 
     .title {
       font-size: 25px;
+      margin: 0 0;
     }
   }
 
   @media (max-width: 768px) {
-    .container {
-      align-items: center;
-      gap: 100px;
-    }
-
     .item {
       flex-direction: column !important;
-      max-width: 500px;
     }
   }
 </style>
