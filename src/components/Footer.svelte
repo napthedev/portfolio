@@ -1,4 +1,4 @@
-<main>
+<main id="footer">
   <p>
     Copyright &copy; 2021. <span class="hide-on-mobile"
       >Designed and coded by me</span

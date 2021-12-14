@@ -1,34 +1,3 @@
-<script>
-  import { onMount } from "svelte";
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  onMount(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#github-status",
-        start: "-=400px",
-        end: "+=100px",
-        scrub: 0.5,
-      },
-    });
-
-    tl.fromTo(
-      "#github-status",
-      {
-        opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-      }
-    );
-  });
-</script>
-
 <main id="github-status">
   <h1 style="text-align: center; margin-bottom: 60px;">My Github Status</h1>
   <div>

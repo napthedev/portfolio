@@ -9,33 +9,19 @@
   gsap.registerPlugin(ScrollTrigger);
 
   onMount(() => {
-    document.querySelectorAll("#projects .item").forEach((item) => {
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: "-=500px",
-          end: "-=150px",
-          scrub: 0.5,
-        },
-      });
+    let sections = gsap.utils.toArray("#projects .item");
 
-      const img = item.querySelector("img");
-      const info = item.querySelector(".item-info");
-
-      tl.fromTo(
-        img,
-        {
-          opacity: 0,
-          y: 20,
-        },
-        { opacity: 1, y: 0, duration: 1 }
-      );
-      tl.fromTo(
-        info,
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1 },
-        "-=1"
-      );
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      scrollTrigger: {
+        trigger: "#projects",
+        pin: true,
+        pinSpacing: true,
+        scrub: 0.5,
+        start: "top",
+        end: "bottom",
+        snap: 0.25,
+      },
     });
   });
 </script>
@@ -46,10 +32,7 @@
   </h1>
   <div class="container">
     {#each projects as project, index}
-      <div
-        class="item"
-        style={`flex-direction: ${index % 2 ? "row" : "row-reverse"}`}
-      >
+      <div class="item">
         <div>
           <img
             style="width: 100%; height: auto; transform-origin: bottom left;"
@@ -82,8 +65,12 @@
 
 <style>
   main {
-    padding: 100px 10vw;
     background: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
   }
 
   .title {
@@ -94,14 +81,15 @@
 
   .container {
     display: flex;
-    flex-direction: column;
+    width: 400vw;
     align-items: stretch;
-    gap: 150px;
   }
 
   .item {
     display: flex;
     gap: 30px;
+    width: 100vw;
+    padding: 0 10vw;
   }
 
   .item > * {
@@ -154,7 +142,7 @@
 
   @media (max-width: 992px) {
     main {
-      padding: 100px 5vw;
+      padding: 100px 0;
     }
 
     .title {
