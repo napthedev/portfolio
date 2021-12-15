@@ -17,7 +17,7 @@
       scrollTrigger: {
         trigger: "#projects",
         pin: true,
-        scrub: 1,
+        scrub: 0.5,
         snap: 1 / (sections.length - 1),
         end: "+=3500",
         pinSpacing: true,
