@@ -5,9 +5,6 @@
   import { fade, slide } from "svelte/transition";
   import { onMount } from "svelte";
 
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-
   let visible = false;
 
   let extraTextVisible = false;
@@ -15,30 +12,6 @@
 
   onMount(() => {
     visible = true;
-  });
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  onMount(() => {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#intro",
-        pin: true,
-        scrub: 0.5,
-        start: "top",
-        end: "bottom",
-      },
-    });
-
-    tl.fromTo(
-      "#intro",
-      {
-        opacity: 1,
-      },
-      {
-        opacity: 0,
-      }
-    );
   });
 </script>
 
