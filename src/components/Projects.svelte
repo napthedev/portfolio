@@ -9,16 +9,18 @@
   gsap.registerPlugin(ScrollTrigger);
 
   onMount(() => {
-    gsap.to("#projects .container", {
+    let sections = gsap.utils.toArray("#projects .item");
+
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
       scrollTrigger: {
         trigger: "#projects",
         pin: true,
+        scrub: 1,
+        snap: 1 / (sections.length - 1),
         pinSpacing: true,
-        scrub: 0.5,
-        start: "top",
-        end: "bottom",
       },
-      xPercent: -75,
     });
   });
 </script>
