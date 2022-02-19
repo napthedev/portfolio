@@ -107,39 +107,38 @@ export const skills = [
 
 export const projects = [
   {
-    name: "E-Cinema",
-    description:
-      "This is a beautiful movie website built with nextjs. It has a wonderful UI, great user experience and real movies. You can watch every popular movies in this place. The data resources are TMDB and 2embed.ru",
-    image: "https://ik.imagekit.io/nap/portfolio/ecinema_pOtsbPW-G.png",
-    techs: ["next", "typescript", "tailwindcss"].map(techIcon),
-    link: "http://e-cinema.vercel.app",
-    git: "https://github.com/napthedev/eCinema.git",
+    name: "Filmhot",
+    description: "A rapid movie website from the LokLok API",
+    image:
+      "https://res.cloudinary.com/naptest/image/upload/v1641805138/filmhot/filmhot_npivh7.jpg",
+    link: "https://filmhot.live",
+    git: "https://github.com/napthedev/filmhot.git",
   },
   {
-    name: "React CssFx Loading",
+    name: "React CSSFX Loading",
     description:
-      "React Wrapper for the CssFx loading collections. It allows you to change colors, width, height, duration of the animation. And the most important, it supports typescript, for all typescript lovers out there.",
-    image: "https://ik.imagekit.io/nap/portfolio/cssfx_EYdoGTXp-6y5.png",
-    techs: ["react", "typescript"].map(techIcon),
+      "React Wrapper for the CSSFX collections. It's a component library, just import to use",
+    image:
+      "https://res.cloudinary.com/naptest/image/upload/v1634719726/cssfx_ecuj37.gif",
     link: "https://www.npmjs.com/package/react-cssfx-loading",
     git: "https://github.com/napthedev/react-cssfx-loading.git",
   },
   {
     name: "MacOS Big Sur on the Web",
     description:
-      "I have recreated the MacOS Big Sur user interface on the web using Vue and Typescript. The UI is almost identical, with light/dark mode changing, wallpapers of other macos, animated dock. You should check it out!",
-    image: "https://ik.imagekit.io/nap/portfolio/mac__0QV2Tj0BnK.png",
-    techs: ["vue", "sass", "typescript"].map(techIcon),
+      "MacOS Big Sur user interface on the web using Vue and Typescript. The UI is almost identical, with light/dark mode changing, wallpapers of other macos, animated dock.",
+    image:
+      "https://res.cloudinary.com/naptest/image/upload/v1645257008/mac-big-sur_mlxmn0.png",
     link: "https://mac-bigsur.vercel.app",
     git: "https://github.com/napthedev/mac-big-sur.git",
   },
   {
-    name: "Atom Background Modified",
+    name: "FireVerse",
     description:
-      "I love the syntax highlighting of the Atom One Dark theme, but the contrast of the background seems to be too light for me, so I have modified the background and publish this theme. I have used it for a long time and I love it!",
-    image: "https://ik.imagekit.io/nap/portfolio/atom_IWGOoa3jf.png",
-    techs: [],
-    link: "https://marketplace.visualstudio.com/items?itemName=NAPTheDevHcj.atom-background-modified",
-    git: "https://github.com/napthedev/atom-background-modified.git",
+      "A chat app made with react, typescript, tailwind, firebase. It's a full-feature messenger clone",
+    image:
+      "https://res.cloudinary.com/naptest/image/upload/v1644039987/fireverse/preview-1_yujhpl.png",
+    link: "https://fireverse.pages.dev",
+    git: "https://github.com/napthedev/fireverse.git",
   },
 ];

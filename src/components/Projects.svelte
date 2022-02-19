@@ -36,20 +36,11 @@
     {#each projects as project}
       <div class="item">
         <div>
-          <img
-            style="width: 100%; height: auto; transform-origin: bottom left;"
-            src={project.image}
-            alt=""
-          />
+          <img src={project.image} alt="" />
         </div>
         <div class="item-info">
           <h1>{project.name}</h1>
           <p>{project.description}</p>
-          <div style="display: flex; gap: 5px;">
-            {#each project.techs as tech}
-              <img style="width: 30px; height: 30px;" src={tech} alt="" />
-            {/each}
-          </div>
 
           <div style="display: flex; margin-top: 25px; gap: 20px;">
             <a href={project.link} target="_blank" class="link">
@@ -89,9 +80,17 @@
 
   .item {
     display: flex;
-    gap: 30px;
+    gap: 100px;
     width: 100vw;
     padding: 0 10vw;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 12px solid #000;
+    outline: 2px solid #888888;
   }
 
   .item > * {
