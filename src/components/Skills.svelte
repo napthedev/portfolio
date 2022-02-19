@@ -3,10 +3,7 @@
 
   import { onMount } from "svelte";
 
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
+  import gsap from "../shared/gsap";
 
   onMount(() => {
     let tl = gsap.timeline({
@@ -133,12 +130,6 @@
   @media (max-width: 768px) {
     .container {
       gap: 10px 0;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .container {
-      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

@@ -3,10 +3,7 @@
   import { onMount } from "svelte";
   import { slide } from "svelte/transition";
 
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
+  import gsap from "../shared/gsap";
 
   let roleCount = 0;
   let role = roles[roleCount];
@@ -28,7 +25,7 @@
     });
 
     tl.fromTo(
-      "#who #who-title",
+      "#who .title",
       {
         fontSize: 60,
       },
@@ -76,13 +73,9 @@
 </script>
 
 <main id="who">
-  <img
-    id="avatar"
-    src="https://ik.imagekit.io/nap/avatar_vjsgYooIu.jpg"
-    alt=""
-  />
+  <img id="avatar" src="/avatar.jpg" alt="" />
   <div>
-    <h1 id="who-title" style="font-size: 40px;">Who I'm I?</h1>
+    <h1 class="title" style="font-size: 40px;">Who I'm I?</h1>
 
     <div id="role" style="display: flex; gap: 10px; margin: 30px 0;">
       <h1 style="height: 35px;">A</h1>
@@ -97,8 +90,8 @@
       My name is Nguyen Anh Phong. I'm {new Date().getFullYear() - 2007} years old.
       I am living in Hanoi, Vietnam. I have started learning web development since
       I was 13 and I really enjoy it. I have made a lot of projects since then, from
-      a basic html page to a complex website like google minified or react library.
-      I hope I could be a great developer and get a good job in the future.
+      a basic html page to a complex project like a react library. I hope I could
+      be a great developer and get a good job in the future.
     </p>
   </div>
 </main>

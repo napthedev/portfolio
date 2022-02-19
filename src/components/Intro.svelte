@@ -2,29 +2,23 @@
   import Typing from "./Typing.svelte";
   import Canvas from "./Canvas.svelte";
 
-  import { fade, slide } from "svelte/transition";
+  import { fade } from "svelte/transition";
   import { onMount } from "svelte";
 
   let visible = false;
-
-  let extraTextVisible = false;
-  const setExtraTextVisible = (payload) => (extraTextVisible = payload);
 
   onMount(() => {
     visible = true;
   });
 </script>
 
-<main id="intro">
+<main>
   {#if visible}
-    <Canvas {setExtraTextVisible} />
+    <Canvas />
   {/if}
   <Typing />
   {#if visible}
     <p in:fade={{ delay: 1600 }}>I'm a frontend developer</p>
-  {/if}
-  {#if extraTextVisible}
-    <p in:slide>With a lot of knowledge collected</p>
   {/if}
 
   {#if visible}

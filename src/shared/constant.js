@@ -42,69 +42,72 @@ export const roles = [
 export const skills = [
   {
     name: "HTML",
-    icon: techIcon("html"),
+    icon: "html",
     link: "https://www.w3schools.com/html/default.asp",
   },
   {
     name: "CSS",
-    icon: techIcon("css"),
+    icon: "css",
     link: "https://www.w3schools.com/css/default.asp",
   },
   {
     name: "Javascript",
-    icon: techIcon("javascript"),
+    icon: "javascript",
     link: "https://www.w3schools.com/js/default.asp",
   },
   {
     name: "Typescript",
-    icon: techIcon("typescript"),
+    icon: "typescript",
     link: "https://www.typescriptlang.org/",
   },
   {
     name: "Node JS",
-    icon: techIcon("nodejs"),
+    icon: "nodejs",
     link: "https://nodejs.org/",
   },
   {
     name: "React",
-    icon: techIcon("react"),
+    icon: "react",
     link: "https://reactjs.org/",
   },
   {
     name: "Next JS",
-    icon: techIcon("next"),
+    icon: "next",
     link: "https://nextjs.org/",
   },
   {
     name: "Vue",
-    icon: techIcon("vue"),
+    icon: "vue",
     link: "https://v3.vuejs.org/",
   },
   {
     name: "Svelte",
-    icon: techIcon("svelte"),
+    icon: "svelte",
     link: "https://svelte.dev/",
   },
   {
     name: "Sass",
-    icon: techIcon("sass"),
+    icon: "sass",
     link: "https://sass-lang.com/",
   },
   {
     name: "Tailwind CSS",
-    icon: techIcon("tailwindcss"),
+    icon: "tailwindcss",
     link: "https://tailwindcss.com/",
   },
   {
     name: "Firebase",
-    icon: techIcon("firebase"),
+    icon: "firebase",
     link: "https://firebase.google.com/",
   },
-];
+].map((item) => ({
+  ...item,
+  icon: techIcon(item.icon),
+}));
 
 export const projects = [
   {
-    name: "eCinema",
+    name: "E-Cinema",
     description:
       "This is a beautiful movie website built with nextjs. It has a wonderful UI, great user experience and real movies. You can watch every popular movies in this place. The data resources are TMDB and 2embed.ru",
     image: "https://ik.imagekit.io/nap/portfolio/ecinema_pOtsbPW-G.png",

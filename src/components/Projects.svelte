@@ -3,24 +3,26 @@
 
   import { onMount } from "svelte";
 
-  import gsap from "gsap";
-  import ScrollTrigger from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
+  import gsap from "../shared/gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   onMount(() => {
-    let sections = gsap.utils.toArray("#projects .item");
+    ScrollTrigger.matchMedia({
+      "(min-width: 768px)": function () {
+        let sections = gsap.utils.toArray("#projects .item");
 
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: "#projects",
-        pin: true,
-        scrub: 0.5,
-        snap: 1 / (sections.length - 1),
-        end: "+=3500",
-        pinSpacing: true,
+        gsap.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#projects",
+            pin: true,
+            scrub: 0.5,
+            snap: 1 / (sections.length - 1),
+            end: "+=3500",
+            pinSpacing: true,
+          },
+        });
       },
     });
   });
@@ -28,7 +30,7 @@
 
 <main id="projects">
   <h1 class="title" style="margin-bottom: 60px; text-align: center;">
-    Checkout some of my projects
+    Some of my projects
   </h1>
   <div class="container">
     {#each projects as project}
@@ -142,17 +144,25 @@
 
   @media (max-width: 992px) {
     .item {
-      padding: 0 5vw;
+      padding: 0 10vw;
     }
 
     .title {
       font-size: 25px;
-      margin: 0 0;
+      margin: 40px 0 !important;
     }
   }
 
   @media (max-width: 768px) {
+    .container {
+      flex-direction: column !important;
+      width: 100vw !important;
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+
     .item {
+      width: 80vw !important;
       flex-direction: column !important;
     }
   }
