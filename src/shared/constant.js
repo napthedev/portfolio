@@ -113,6 +113,7 @@ export const projects = [
       "https://res.cloudinary.com/naptest/image/upload/v1641805138/filmhot/filmhot_npivh7.jpg",
     link: "https://filmhot.live",
     git: "https://github.com/napthedev/filmhot.git",
+    techs: ["react", "typescript", "tailwindcss", "firebase"],
   },
   {
     name: "React CSSFX Loading",
@@ -122,6 +123,7 @@ export const projects = [
       "https://res.cloudinary.com/naptest/image/upload/v1634719726/cssfx_ecuj37.gif",
     link: "https://www.npmjs.com/package/react-cssfx-loading",
     git: "https://github.com/napthedev/react-cssfx-loading.git",
+    techs: ["react", "typescript"],
   },
   {
     name: "MacOS Big Sur on the Web",
@@ -131,6 +133,7 @@ export const projects = [
       "https://res.cloudinary.com/naptest/image/upload/v1645257008/mac-big-sur_mlxmn0.png",
     link: "https://mac-bigsur.vercel.app",
     git: "https://github.com/napthedev/mac-big-sur.git",
+    techs: ["vue", "typescript", "sass"],
   },
   {
     name: "FireVerse",
@@ -140,5 +143,9 @@ export const projects = [
       "https://res.cloudinary.com/naptest/image/upload/v1644039987/fireverse/preview-1_yujhpl.png",
     link: "https://fireverse.pages.dev",
     git: "https://github.com/napthedev/fireverse.git",
+    techs: ["react", "typescript", "tailwindcss", "firebase"],
   },
-];
+].map((item) => ({
+  ...item,
+  techs: item.techs.map(techIcon),
+}));

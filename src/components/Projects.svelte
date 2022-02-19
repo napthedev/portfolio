@@ -36,11 +36,17 @@
     {#each projects as project}
       <div class="item">
         <div>
-          <img src={project.image} alt="" />
+          <img class="preview" src={project.image} alt="" />
         </div>
         <div class="item-info">
           <h1>{project.name}</h1>
           <p>{project.description}</p>
+
+          <div style="display: flex; gap: 5px;">
+            {#each project.techs as tech}
+              <img style="width: 30px; height: 30px;" src={tech} alt="" />
+            {/each}
+          </div>
 
           <div style="display: flex; margin-top: 25px; gap: 20px;">
             <a href={project.link} target="_blank" class="link">
@@ -83,9 +89,10 @@
     gap: 100px;
     width: 100vw;
     padding: 0 10vw;
+    box-sizing: border-box;
   }
 
-  .item img {
+  .item .preview {
     width: 100%;
     height: auto;
     border-radius: 20px;
@@ -155,13 +162,14 @@
   @media (max-width: 768px) {
     .container {
       flex-direction: column !important;
+      align-items: stretch;
       width: 100vw !important;
-      gap: 50px;
+      gap: 70px;
       margin-bottom: 50px;
     }
 
     .item {
-      width: 80vw !important;
+      gap: 20px !important;
       flex-direction: column !important;
     }
   }
