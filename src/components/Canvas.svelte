@@ -112,15 +112,8 @@
   });
 </script>
 
-<canvas in:fade={{ delay: 1800 }} bind:this={canvas} />
-
-<style>
-  canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    opacity: 0.5;
-  }
-</style>
+<canvas
+  class="absolute inset-0 w-full h-full opacity-50"
+  in:fade={{ delay: 1800 }}
+  bind:this={canvas}
+/>

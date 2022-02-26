@@ -24,69 +24,39 @@
       },
     });
 
-    tl.fromTo(
-      "#who .title",
-      {
-        fontSize: 60,
-      },
-      {
-        fontSize: 30,
-      }
-    );
+    tl.fromTo("#who .title", { fontSize: 60 }, { fontSize: 30 });
 
-    tl.fromTo(
-      "#who #avatar",
-      {
-        opacity: 0,
-        x: -20,
-      },
-      {
-        opacity: 1,
-        x: 0,
-      }
-    );
+    tl.fromTo("#who img", { opacity: 0, x: -20 }, { opacity: 1, x: 0 });
 
-    tl.fromTo(
-      "#who #role",
-      {
-        opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-      }
-    );
+    tl.fromTo("#who #role", { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
 
-    tl.fromTo(
-      "#who #story",
-      {
-        opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-      }
-    );
+    tl.fromTo("#who #story", { opacity: 0, y: 20 }, { opacity: 1, y: 0 });
   });
 </script>
 
-<main id="who">
-  <img id="avatar" src="/avatar.jpg" alt="" />
+<div
+  class="flex gap-[5vw] bg-dark-lighten px-[5vw] lg:px-[15vw] z-[2] h-screen items-center justify-center flex-col md:flex-row"
+  id="who"
+>
+  <img class="w-[225px] h-[225px] rounded-full" src="/avatar.jpg" alt="" />
   <div>
-    <h1 class="title" style="font-size: 40px;">Who I'm I?</h1>
+    <h1 class="title text-[40px]" style="font-size: 40px;">Who I'm I?</h1>
 
-    <div id="role" style="display: flex; gap: 10px; margin: 30px 0;">
-      <h1 style="height: 35px;">A</h1>
-      <div style="height: 35px;">
+    <div class="text-3xl flex gap-[10px] mt-[15px] mb-[25px]" id="role">
+      <span class="h-[35px]">A</span>
+      <div class="h-[35px]">
         {#key role}
-          <h1 class="underline" transition:slide={{ duration: 300 }}>{role}</h1>
+          <p
+            class="relative after:w-full after:h-1 after:rounded after:bg-primary after:absolute after:top-[105%] after:left-1/2 after:-translate-x-1/2 after:animate-expand-delay"
+            transition:slide={{ duration: 300 }}
+          >
+            {role}
+          </p>
         {/key}
       </div>
     </div>
 
-    <p id="story">
+    <p class="text-lg text-gray-200" id="story">
       My name is Nguyen Anh Phong. I'm {new Date().getFullYear() - 2007} years old.
       I am living in Hanoi, Vietnam. I have started learning web development since
       I was 13 and I really enjoy it. I have made a lot of projects since then, from
@@ -94,72 +64,4 @@
       be a great developer and get a good job in the future.
     </p>
   </div>
-</main>
-
-<style>
-  main {
-    display: flex;
-    gap: 5vw;
-    background: #252525;
-    padding: 0 15vw;
-    z-index: 2;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-  }
-
-  img {
-    width: 225px;
-    height: 225px;
-    border-radius: 100%;
-  }
-
-  h1 {
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-    font-size: 18px;
-    color: #c5c5c5;
-  }
-
-  @media (max-width: 992px) {
-    main {
-      padding: 0 5vw;
-    }
-  }
-
-  @media (max-width: 768px) {
-    main {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-
-  .underline {
-    position: relative;
-  }
-
-  .underline::after {
-    content: "";
-    width: 100%;
-    height: 4px;
-    background: #1e90ff;
-    position: absolute;
-    top: 105%;
-    left: 50%;
-    transform: translate(-50%);
-    width: 0;
-    animation: expand 0.4s ease-in-out 0.3s forwards;
-  }
-
-  @keyframes expand {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-</style>
+</div>

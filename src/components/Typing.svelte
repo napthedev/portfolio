@@ -10,7 +10,12 @@
   });
 </script>
 
-<svg viewBox="0 0 276 97" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+  class="h-[10vw] max-h-[100px] min-h-[60px] max-w-[100vw] z-[1]"
+  viewBox="0 0 276 97"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
   {#if visible}
     {#each characters as character, index}
       <path
@@ -24,13 +29,3 @@
     {/each}
   {/if}
 </svg>
-
-<style>
-  svg {
-    height: 10vw;
-    max-height: 100px;
-    min-height: 60px;
-    max-width: 100vw;
-    z-index: 1;
-  }
-</style>

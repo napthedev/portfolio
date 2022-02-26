@@ -1,56 +1,15 @@
-<main id="github-status">
-  <h1 style="text-align: center; margin-bottom: 60px;">My Github Status</h1>
-  <div>
+<main class="px-[5vw] lg:px-[10vw] py-[50px]">
+  <h1 class="text-center mb-[40px] text-3xl">My Github Status</h1>
+  <div class="flex flex-col justify-center items-center md:flex-row">
     <img
+      class="h-auto w-full max-w-[500px] md:h-[150px] md:w-auto md:max-w-none lg:h-[200px]"
       src="https://github-readme-stats.vercel.app/api/top-langs/?username=napthedev&layout=compact&theme=tokyonight&langs_count=6"
       alt=""
     />
     <img
+      class="h-auto w-full max-w-[500px] md:h-[150px] md:w-auto md:max-w-none lg:h-[200px]"
       src="https://github-readme-stats.vercel.app/api?username=napthedev&show_icons=true&theme=tokyonight"
       alt=""
     />
   </div>
 </main>
-
-<style>
-  main {
-    background: #1f1f1f;
-    padding: 50px 10vw;
-  }
-
-  div {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-  }
-
-  img {
-    height: 200px;
-    width: auto;
-  }
-
-  @media (max-width: 1200px) {
-    img {
-      height: 150px;
-    }
-  }
-
-  @media (max-width: 992px) {
-    main {
-      padding: 50px 5vw;
-    }
-  }
-
-  @media (max-width: 860px) {
-    div {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    img {
-      height: auto;
-      width: 100%;
-      max-width: 500px;
-    }
-  }
-</style>

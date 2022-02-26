@@ -10,7 +10,6 @@
     ScrollTrigger.matchMedia({
       "(min-width: 768px)": function () {
         let sections = gsap.utils.toArray("#projects .item");
-
         gsap.to(sections, {
           xPercent: -100 * (sections.length - 1),
           ease: "none",
@@ -28,149 +27,57 @@
   });
 </script>
 
-<main id="projects">
-  <h1 class="title" style="margin-bottom: 60px; text-align: center;">
+<div
+  class="bg-dark-lighten flex flex-col justify-center min-h-screen overflow-hidden"
+  id="projects"
+>
+  <h1 class="my-[40px] lg:my-[60px] text-center text-[25px] lg:text-[40px]">
     Some of my projects
   </h1>
-  <div class="container">
+  <div
+    class="flex md:w-[400vw] items-stretch flex-col md:flex-row gap-[70px] md:gap-0 mb-[50px] md:mb-0"
+  >
     {#each projects as project}
-      <div class="item">
-        <div>
-          <img class="preview" src={project.image} alt="" />
+      <div
+        class="item flex flex-col md:flex-row gap-[20px] md:gap-[100px] w-full px-[10vw]"
+      >
+        <div class="flex-1">
+          <img
+            class="h-auto rounded-[20px] border-[12px] border-black outline-2 outline-[#888] outline"
+            src={project.image}
+            alt=""
+          />
         </div>
-        <div class="item-info">
-          <h1>{project.name}</h1>
-          <p>{project.description}</p>
+        <div class="item-info flex-1">
+          <h1 class="text-3xl">{project.name}</h1>
+          <p class="text-[20px] text-justify my-3">{project.description}</p>
 
-          <div style="display: flex; gap: 5px;">
+          <div class="flex gap-[5px]">
             {#each project.techs as tech}
-              <img style="width: 30px; height: 30px;" src={tech} alt="" />
+              <img class="w-[30px] h-[30px]" src={tech} alt="" />
             {/each}
           </div>
 
-          <div style="display: flex; margin-top: 25px; gap: 20px;">
-            <a href={project.link} target="_blank" class="link">
-              <i class="bx bx-link-external" /> <span> Live Demo</span></a
+          <div class="flex mt-[25px] gap-[20px]">
+            <a
+              href={project.link}
+              target="_blank"
+              class="h-[45px] px-[15px] text-white rounded transition duration-300 flex items-center gap-[10px] bg-[#1876d2] hover:bg-[#2884e0]"
             >
-            <a href={project.git} target="_blank" class="git"
-              ><i class="bx bxl-github" /> View Github
+              <i class="bx bx-link-external text-[25px]" />
+              <span> Live Demo</span>
+            </a>
+            <a
+              href={project.git}
+              target="_blank"
+              class="h-[45px] px-[15px] text-white rounded transition duration-300 flex items-center gap-[10px] bg-[#0d1116] hover:bg-[#191e25]"
+            >
+              <i class="bx bxl-github text-[25px]" />
+              <span> View Github</span>
             </a>
           </div>
         </div>
       </div>
     {/each}
   </div>
-</main>
-
-<style>
-  main {
-    background: #2a2a2a;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 100vh;
-    overflow: hidden;
-  }
-
-  .title {
-    margin: 60px 0;
-    text-align: center;
-    font-size: 40px;
-  }
-
-  .container {
-    display: flex;
-    width: 400vw;
-    align-items: stretch;
-  }
-
-  .item {
-    display: flex;
-    gap: 100px;
-    width: 100vw;
-    padding: 0 10vw;
-    box-sizing: border-box;
-  }
-
-  .item .preview {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    border: 12px solid #000;
-    outline: 2px solid #888888;
-  }
-
-  .item > * {
-    flex: 1;
-  }
-
-  h1 {
-    margin: 0;
-  }
-  p {
-    font-size: 20px;
-    text-align: justify;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    height: 45px;
-    padding: 0 15px;
-    color: white;
-    border-radius: 5px;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .link {
-    background: #1876d2;
-  }
-
-  .link:hover {
-    background: #2884e0;
-  }
-
-  .git {
-    background: #0d1116;
-  }
-
-  .git:hover {
-    background: #1c232b;
-  }
-
-  i {
-    font-size: 25px;
-  }
-
-  @media (max-width: 992px) {
-    .item {
-      padding: 0 10vw;
-    }
-
-    .title {
-      font-size: 25px;
-      margin: 40px 0 !important;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column !important;
-      align-items: stretch;
-      width: 100vw !important;
-      gap: 70px;
-      margin-bottom: 50px;
-    }
-
-    .item {
-      gap: 20px !important;
-      flex-direction: column !important;
-    }
-  }
-</style>
+</div>
