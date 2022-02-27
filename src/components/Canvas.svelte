@@ -113,7 +113,7 @@
 </script>
 
 <canvas
-  class="absolute inset-0 w-full h-full opacity-50"
+  class="absolute inset-0 w-full h-full opacity-60"
   in:fade={{ delay: 1800 }}
   bind:this={canvas}
 />

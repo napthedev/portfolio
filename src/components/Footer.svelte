@@ -1,5 +1,5 @@
 <div
-  class="bg-[#2a2a2a] flex justify-between items-center h-[70px] px-[30px] text-lg"
+  class="bg-dark-lighten flex justify-between items-center h-[70px] px-[30px] text-lg"
 >
   <p>
     Copyright &copy; 2021. <span class="hidden md:inline"
