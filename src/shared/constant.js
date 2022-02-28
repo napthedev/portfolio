@@ -110,7 +110,7 @@ export const projects = [
     name: "Filmhot",
     description: "A rapid movie website from the LokLok API",
     image:
-      "https://res.cloudinary.com/naptest/image/upload/v1641805138/filmhot/filmhot_npivh7.jpg",
+      "https://res.cloudinary.com/naptest/image/upload/w_700,c_scale/filmhot/filmhot_npivh7.jpg",
     link: "https://filmhot.live",
     git: "https://github.com/napthedev/filmhot.git",
     techs: ["react", "typescript", "tailwindcss", "firebase"],
@@ -119,8 +119,7 @@ export const projects = [
     name: "React CSSFX Loading",
     description:
       "React Wrapper for the CSSFX collections. It's a component library, just import to use",
-    image:
-      "https://res.cloudinary.com/naptest/image/upload/v1634719726/cssfx_ecuj37.gif",
+    image: "https://res.cloudinary.com/naptest/image/upload/cssfx_ecuj37.gif",
     link: "https://www.npmjs.com/package/react-cssfx-loading",
     git: "https://github.com/napthedev/react-cssfx-loading.git",
     techs: ["react", "typescript"],
@@ -130,7 +129,7 @@ export const projects = [
     description:
       "MacOS Big Sur user interface on the web using Vue and Typescript. The UI is almost identical, with light/dark mode changing, wallpapers of other macos, animated dock.",
     image:
-      "https://res.cloudinary.com/naptest/image/upload/v1645257008/mac-big-sur_mlxmn0.png",
+      "https://res.cloudinary.com/naptest/image/upload/w_700,c_scale/mac-big-sur_mlxmn0.png",
     link: "https://mac-bigsur.vercel.app",
     git: "https://github.com/napthedev/mac-big-sur.git",
     techs: ["vue", "typescript", "sass"],
@@ -140,7 +139,7 @@ export const projects = [
     description:
       "A chat app made with react, typescript, tailwind, firebase. It's a full-feature messenger clone",
     image:
-      "https://res.cloudinary.com/naptest/image/upload/v1644039987/fireverse/preview-1_yujhpl.png",
+      "https://res.cloudinary.com/naptest/image/upload/w_700,c_scale/fireverse/preview-1_yujhpl.png",
     link: "https://fireverse.pages.dev",
     git: "https://github.com/napthedev/fireverse.git",
     techs: ["react", "typescript", "tailwindcss", "firebase"],
