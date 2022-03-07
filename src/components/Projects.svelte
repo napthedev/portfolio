@@ -42,11 +42,15 @@
         class="item flex flex-col md:flex-row gap-[20px] md:gap-[100px] w-full px-[10vw]"
       >
         <div class="flex-1">
-          <img
-            class="h-auto rounded-[20px] border-[12px] border-black outline-2 outline-[#888] outline"
-            src={project.image}
-            alt=""
-          />
+          <div
+            class="relative before:absolute before:z-[-1] before:inset-[-2px] before:bg-[#888] before:rounded-[20px]"
+          >
+            <img
+              class="rounded-[20px] border-[8px] border-black"
+              src={project.image}
+              alt=""
+            />
+          </div>
         </div>
         <div class="item-info flex-1">
           <h1 class="text-3xl">{project.name}</h1>
