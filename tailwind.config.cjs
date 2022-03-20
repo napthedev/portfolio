@@ -3,8 +3,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "#0b0d21",
-        "dark-lighten": "#0f1127",
+        dark: "#101010",
+        "dark-lighten": "#161616",
         primary: "#1e90ff",
       },
       keyframes: {
