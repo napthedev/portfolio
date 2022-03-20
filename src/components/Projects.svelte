@@ -8,7 +8,7 @@
 
   onMount(() => {
     ScrollTrigger.matchMedia({
-      "(min-width: 768px)": function () {
+      "(min-width: 1024px)": function () {
         let sections = gsap.utils.toArray("#projects .item");
         gsap.to(sections, {
           xPercent: -100 * (sections.length - 1),
@@ -35,11 +35,11 @@
     Some of my projects
   </h1>
   <div
-    class="flex md:w-[400vw] items-stretch flex-col md:flex-row gap-[70px] md:gap-0 mb-[50px] md:mb-0"
+    class="flex lg:w-[400vw] items-stretch flex-col lg:flex-row gap-[70px] lg:gap-0 mb-[50px] lg:mb-0"
   >
     {#each projects as project}
       <div
-        class="item flex flex-col md:flex-row gap-[20px] md:gap-[100px] w-full px-[10vw]"
+        class="item flex flex-col lg:flex-row gap-[20px] lg:gap-[100px] w-full px-[10vw]"
       >
         <div class="flex-1">
           <div
