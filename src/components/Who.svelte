@@ -47,7 +47,7 @@
       <div class="h-[35px]">
         {#key role}
           <p
-            class="relative after:w-full after:h-1 after:rounded after:bg-primary after:absolute after:top-[105%] after:left-1/2 after:-translate-x-1/2 after:animate-expand-delay"
+            class="relative after:w-full after:h-1 after:rounded after:bg-primary after:absolute after:top-[105%] after:left-1/2 after:-translate-x-1/2 after:animate-expand-delay after:w-0"
             transition:slide={{ duration: 300 }}
           >
             {role}

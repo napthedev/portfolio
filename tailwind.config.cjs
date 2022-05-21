@@ -18,7 +18,7 @@ module.exports = {
         },
       },
       animation: {
-        "expand-delay": "expand 0.4s ease-in-out 0.3s forwards",
+        "expand-delay": "expand 0.35s ease-in-out 0.35s forwards",
       },
     },
   },
