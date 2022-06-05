@@ -40,7 +40,7 @@
 >
   <img class="w-[225px] h-[225px] rounded-full" src="/avatar.jpg" alt="" />
   <div>
-    <h1 class="title text-[40px]" style="font-size: 40px;">Who I'm I?</h1>
+    <h1 class="title text-[40px]" style="font-size: 40px;">Who am I?</h1>
 
     <div class="text-3xl flex gap-[10px] mt-[15px] mb-[25px]" id="role">
       <span class="h-[35px]">A</span>
@@ -58,10 +58,10 @@
 
     <p class="text-lg text-gray-200" id="story">
       My name is Nguyen Anh Phong. I'm {new Date().getFullYear() - 2007} years old.
-      I am living in Hanoi, Vietnam. I have started learning web development since
-      I was 13 and I really enjoy it. I have made a lot of projects since then, from
-      a basic html page to a complex project like a react library. I hope I could
-      be a great developer and get a good job in the future.
+      I am living in Hanoi, Vietnam. I have learnt web development since I was 13
+      and I really enjoy it. I have made a lot of projects since then, from a basic
+      html page to a complex project like a react library. I hope to be a great developer
+      and get a good job in the future.
     </p>
   </div>
 </div>
